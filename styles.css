@@ -204,7 +204,6 @@ button {
   height: 46px;
   text-decoration: none;
   color: #fff;
-
   font-weight: bold;
 
   background-color: #6767ab;
@@ -216,13 +215,13 @@ button:hover {
 }
 
 .botao {
-  margin: 3px 14px 4px 17px;
+  margin: 4px;
   font-size: 1.625rem;
 }
 
 .address{
   font-size: 2rem;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 .addressLink{
@@ -659,7 +658,7 @@ button:hover {
     color: #fff;
     text-decoration: underline;
     padding: 1rem 0 0 0;
-    line-height: 35px;
+    line-height: 30px;
   }
 
   button {
