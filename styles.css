@@ -1,0 +1,830 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body,
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.info {
+  justify-content: space-between;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding: 100px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  width: 726px !important;
+  height: 600px !important;
+  padding: 20px 40px 20px 40px;
+  border: 1px solid #888;
+  border-radius: 0% !important;
+}
+
+.modalTitule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  color: #6767ab;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modalInf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center !important;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+.ola {
+  font-weight: bold;
+}
+
+.form {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  border-radius: 0px !important;
+  background-color: rgba(103, 103, 171, 0.2) !important;
+}
+textarea {
+  resize: none;
+  height: 8rem;
+  margin-bottom: 1rem !important;
+  background-color: rgba(103, 103, 171, 0.2) !important;
+  border-radius: 0px !important;
+  resize: none !important;
+}
+
+.inputName {
+  margin-bottom: 2rem;
+}
+
+.inputEmpresa {
+  margin-bottom: 2rem;
+}
+
+.inputContacto {
+  margin-bottom: 2rem;
+}
+.inputContacto::placeholder,
+.inputEmpresa::placeholder,
+.inputName::placeholder,
+textarea::placeholder {
+  color: black !important;
+  opacity: 0.1 !important;
+}
+
+.inputContacto:focus,
+.inputEmpresa:focus,
+.inputName:focus,
+textarea:focus {
+  color: black !important;
+  background-color: #6767ab !important;
+  opacity: 0.7;
+}
+
+.modalBotao {
+  font-size: 0.875rem;
+  height: 40px !important;
+  width: 240px !important;
+  margin-top: -15px;
+  float: right;
+}
+.closeButton {
+  height: 30px;
+  width: 30px;
+  background: #1a1a1a;
+  padding: 0;
+  border: 2px solid #6767ab;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #6767ab;
+  font-size: 1rem;
+  font-weight: lighter;
+
+  margin-top: -5px;
+  float: right;
+}
+
+.closeButton:hover {
+  background: #6767ab;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 1;
+  font-weight: bold;
+  border: none !important;
+}
+.divClose {
+  margin-top: -35px;
+  margin-right: -55px;
+}
+.logo {
+  position: absolute;
+  padding: 2rem;
+  padding-top: 4rem;
+}
+
+.info {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+  right: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  line-height: 1rem;
+  
+}
+
+.links {
+  margin-top: 5rem;
+}
+
+a:link {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6767ab !important;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #6767ab !important;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+button {
+  width: 193px;
+  height: 46px;
+  text-decoration: none;
+  color: #fff;
+
+  font-weight: bold;
+
+  background-color: #6767ab;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  border: 4px solid #515196;
+}
+
+.botao {
+  margin: 3px 14px 4px 17px;
+  font-size: 1.625rem;
+}
+
+.address{
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.addressLink{
+  text-decoration: none !important;
+}
+
+
+.contacts {
+  font-size: 1rem;
+}
+
+.contacts a{
+  text-decoration: none !important;
+}
+
+
+.phoneNumberDiv {
+  display: flex;
+}
+
+.videoDiv {
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 1024px) {
+  #vid {
+    display: block;
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  #vidMobile {
+    display: none;
+  }
+  #vidTablet {
+    display: none;
+  }
+  .botaoMobile {
+    display: none;
+  }
+}
+
+/* Mobile CSS*/
+@media screen and (max-width: 767px) {
+  body {
+    position: fixed;
+  }
+  #vid {
+    display: none;
+  }
+  #vidMobile {
+    display: block;
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  #vidTablet {
+    display: none;
+  }
+  .logo {
+    position: absolute;
+    padding-top: 3.5rem;
+    padding-left: 1rem;
+   
+  }
+
+  .logo img{
+    height: 40px;
+    width: 143px;
+  }
+
+ 
+  .botaoMobile {
+    width: 14.688rem;
+    height: 3.125rem;
+    font-size: 1.875rem;
+    display:none;
+  }
+
+  .BotaoSideBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 4rem;
+    padding-left: 5rem;
+    z-index: 999;
+    width: 40%;
+  }
+
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+    right: 0;
+  }
+
+  .info {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    padding-right: 2rem;
+    right: 0;
+    color: #fff;
+    flex-direction: column;
+    text-align: right;
+    backdrop-filter: blur(5px) brightness(0.7);
+    -webkit-backdrop-filter: blur(5px) brightness(0.7);
+    clear: both;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    line-height: 1rem;
+  }
+
+  .positionMobileContacts {
+    margin-top: 4rem;
+  }
+
+  .positionMobileButton {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .links {
+    margin-top: 3rem;
+  }
+
+  #emailMush {
+    font-weight: bold;
+  }
+
+  a:link {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+    padding: 0;
+    line-height: 20px;
+  }
+
+  button {
+    width: 193px;
+    height: 46px;
+    text-decoration: none;
+    color: #fff;
+
+    font-weight: bold;
+
+    background-color: #6767ab;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botao {
+    height: 50px;
+    width: 235px;
+    font-size: 1.5rem;
+  }
+
+  .address,
+  .contacts {
+    font-size: 1.25rem;
+    padding: 0;
+    line-height: 1rem;
+  }
+
+  .contacts a{
+    text-decoration: none !important;
+  }
+  
+
+  #imgClose {
+    position: absolute;
+    display: none;
+  }
+
+  #imgMenu {
+    position: absolute;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left: 24px;
+    padding-right: 24px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 95% !important;
+    height: auto !important;
+    padding: 34px 20px 10px 20px;
+    border: 1px solid #888;
+    border-radius: 0% !important;
+  }
+
+  .modalTitule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+    color: #6767ab;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .modalInf {
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center !important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 0.813rem;
+  }
+
+  .ola {
+    font-weight: bold;
+  }
+
+  .form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  input {
+    border-radius: 0px !important;
+    background-color: rgba(103, 103, 171, .2) !important;
+  }
+
+  textarea {
+    resize: none;
+    height: 4rem;
+    margin-bottom: 0.5rem !important;
+    background-color: rgba(103, 103, 171, .2) !important;
+  }
+
+  label {
+    font-size: 0.875rem;
+  }
+  .inputName {
+    margin-bottom: 0.5rem;
+
+  }
+
+  .inputEmpresa {
+    margin-bottom: 0.5rem;
+  }
+
+
+  .inputContacto {
+    margin-bottom: 0.5rem;
+  }
+  .inputContacto::placeholder,
+  .inputEmpresa::placeholder,
+  .inputName::placeholder,
+  textarea::placeholder {
+    color: black !important;
+  }
+
+  .inputContactofocus,
+  .inputEmpresa:focus,
+  .inputName:focus,
+  textarea:focus {
+    color: black !important;
+    background-color: #6767ab !important;
+    opacity: 0.7;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .closeButton {
+    height: 30px;
+    width: 30px;
+    background: #1a1a1a;
+    padding: 0;
+    border: 2px solid #6767ab;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #6767ab;
+    font-size: 1.25rem;
+    font-weight: lighter;
+
+    float: right;
+  }
+
+  .divClose {
+    margin-top: -50px;
+    margin-right: -35px;
+  }
+
+  .modalBotao {
+    font-size: 1.25rem;
+    height: 50px !important;
+    width: 100% !important;
+    margin-top: 1rem;
+  }
+}
+/* Tablet CSS*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    position: fixed;
+  }
+  #vidMobile {
+    display: none;
+  }
+  #vid {
+    display: none;
+  }
+  #vidTablet {
+    display: block;
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .logo {
+    position: absolute;
+    padding-top: 2rem;
+    
+  }
+
+ 
+
+  
+  .botaoMobile {
+    width: 14.688rem;
+    height: 3.125rem;
+    font-size: 1.875rem;
+    display:none;
+  }
+
+  .BotaoSideBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    z-index: 999;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+    right: 0;
+  }
+
+  .info {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    padding-right: 2rem;
+    right: 0;
+    color: #fff;
+    flex-direction: column;
+    text-align: right;
+    backdrop-filter: blur(5px) brightness(0.7);
+    -webkit-backdrop-filter: blur(5px) brightness(0.7);
+    clear: both;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    line-height: 0.5rem;
+  }
+
+  .positionMobileContacts {
+    margin-top: 10rem;
+  }
+
+  .positionMobileButton {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  .links {
+    margin-top: 3rem;
+  }
+
+  #emailMush {
+    font-weight: bold;
+  }
+
+  a:link {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-size: 1.875rem;
+    text-decoration: none;
+    color: #fff;
+    text-decoration: underline;
+    padding: 1rem 0 0 0;
+    line-height: 35px;
+  }
+
+  button {
+    width: 193px;
+    height: 46px;
+    text-decoration: none;
+    color: #fff;
+
+    font-weight: bold;
+
+    background-color: #6767ab;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botao {
+    height: 60px;
+    width: 335px;
+    font-size: 2rem;
+  }
+
+  .address,
+  .contacts {
+    font-size: 1.875rem;
+    padding: 0;
+    line-height: 20px;
+  }
+
+  .contacts a{
+    text-decoration: none !important;
+  }
+  
+
+  #imgClose {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: none;
+  }
+
+  #imgMenu {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    padding-top: 30%;
+    padding-bottom: 20%;
+    padding-left: 24px;
+    padding-right: 24px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 95% !important;
+    height: auto !important;
+    padding: 34px 20px 10px 20px;
+    border: 1px solid #888;
+    border-radius: 0% !important;
+  }
+
+  .modalTitule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+    color: #6767ab;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .modalInf {
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center !important;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.188rem;
+  }
+
+  .ola {
+    font-weight: bold;
+  }
+
+  .form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  input {
+    border-radius: 0px !important;
+    background-color: rgba(103, 103, 171, 0.2) !important;
+  }
+  textarea {
+    resize: none;
+    height: 10rem;
+    margin-bottom: 0.5rem !important;
+    background-color: rgba(103, 103, 171, 0.2) !important;
+  }
+
+  label {
+    font-size: 1.25rem;
+  }
+  .inputName {
+    margin-bottom: 0.5rem;
+  }
+
+  .inputEmpresa {
+    margin-bottom: 0.5rem;
+  }
+
+  .inputContacto {
+    margin-bottom: 0.5rem;
+  }
+  .inputContacto.address,
+  .inputEmpresa::placeholder,
+  .inputName::placeholder,
+  textarea::placeholder {
+    color: black !important;
+    opacity: 0.1 !important;
+  }
+
+  .inputContacto:focus,
+  .inputEmpresa:focus,
+  .inputName:focus,
+  textarea:focus {
+    color: black !important;
+    background-color: #6767ab !important;
+    opacity: 0.7;
+  }
+
+  .closeButton {
+    height: 30px;
+    width: 30px;
+    background: #1a1a1a;
+    padding: 0;
+    border: 2px solid #6767ab;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #6767ab;
+    font-size: 1.25rem;
+    font-weight: lighter;
+
+    float: right;
+  }
+
+  .divClose {
+    margin-top: -50px;
+    margin-right: -35px;
+  }
+
+  .modalBotao {
+    font-size: 1.25rem;
+    height: 50px !important;
+    width: 100% !important;
+    margin-top: 2rem;
+  }
+}
